@@ -10,9 +10,9 @@ import org.testng.annotations.Test;
 
 
 public class DivisionCalcTest {
-    @Parameters({"error-message"})
+    @Parameters({"error-message", "first-value", "second-value", "expected-result"})
     @Test
-    void divisionTest(String errorMessage) throws DivisionByZeroException {
-        Assert.assertEquals(Calculator.divide(10,2), 10, errorMessage);
+    void divisionTest(String errorMessage, Integer a, Integer b, Integer expectedResult) throws DivisionByZeroException {
+        Assert.assertEquals(Calculator.divide(a,b), expectedResult.intValue(), errorMessage);
     }
 }

@@ -2,6 +2,9 @@
 
 <suite name="Suite1" verbose="1" >
     <parameter name="error-message" value="Invalid result!" />
+    <parameter name="first-value" value="10"/>
+    <parameter name="second-value" value="2"/>
+    <parameter name="expected-result" value="5"/>
     <test name="CalculatorTest" >
         <classes>
             <class name="aqa_tests.AddClassTest" />
