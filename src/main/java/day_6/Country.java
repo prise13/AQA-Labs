@@ -62,6 +62,6 @@ public class Country {
 
     @Override
     public String toString() {
-        return  "name: " + this.name + " population: " + this.population + " language: " + this.language + " insertion time: " + this.insertionTime + "\n";
+        return   "name: " + this.name + " population: " + this.population + " language: " + this.language + " insertion time: " + this.insertionTime + "\n";
     }
 }

@@ -9,3 +9,4 @@ public class NuclearBase {
     private int missilesAmount;
     private Date insertionTime;
 }
+
