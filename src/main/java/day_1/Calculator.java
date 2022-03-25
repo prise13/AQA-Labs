@@ -11,13 +11,13 @@ public class Calculator {
         System.out.println(minus(10,5));
     }
 
-    private static int add(int a, int b) {
+    public static int add(Integer a, Integer b) {
         return a+b;
     }
-    private static int multiple(int a, int b) {
+    public static int multiple(int a, int b) {
         return a*b;
     }
-    private static int divide(int a, int b) throws DivisionByZeroException {
+    public static int divide(int a, int b) throws DivisionByZeroException {
         if (b==0) {
             try {
                 throw new DivisionByZeroException("Null division is impossible, did you even visit the school?");
@@ -28,7 +28,7 @@ public class Calculator {
         }
         return a/b;
     }
-    private static int minus(int a, int b) {
+    public static int minus(int a, int b) {
         return a-b;
     }
 

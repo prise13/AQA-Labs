@@ -43,5 +43,14 @@ public class RelatedMain {
         session.save(item2);
         session.getTransaction().commit();
         session.close();
+
+        // Read operation
+        session.beginTransaction();
+        Cart cart2 = session.find(Cart.class, 2);
+        cart2.getItems().forEach(item -> {
+            System.out.println(item.getItemName());
+        });
+        session.getTransaction().commit();
+        session.close();
     }
 }
