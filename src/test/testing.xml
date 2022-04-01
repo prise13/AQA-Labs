@@ -9,8 +9,8 @@
         <classes>
             <class name="aqa_tests.AddClassTest" />
             <class name="aqa_tests.DivisionCalcTest" />
-<!--            <class name="aqa_tests.MinusCalcTest" />-->
-<!--            <class name="aqa_tests.MultipleClassTest" />-->
+            <class name="aqa_tests.MinusCalcTest" />
+            <class name="aqa_tests.MultipleClassTest" />
         </classes>
     </test>
 </suite>
