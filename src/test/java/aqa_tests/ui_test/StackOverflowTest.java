@@ -33,11 +33,12 @@ public class StackOverflowTest {
         joinCommunityButton.click();
         WebElement joinCommunityPageTitle = chromeDriver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/h1"));
         Assert.assertTrue(joinCommunityPageTitle.isDisplayed());
+        Assert.assertEquals(joinCommunityPageTitle.getText(), "Join the Stack Overflow community");
     }
 
     @AfterTest
     void closeSession() {
-        chromeDriver.close();
-        chromeDriver.quit();
+//        chromeDriver.close();
+//        chromeDriver.quit();
     }
 }
