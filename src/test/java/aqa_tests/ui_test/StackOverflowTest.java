@@ -38,7 +38,7 @@ public class StackOverflowTest {
 
     @AfterTest
     void closeSession() {
-//        chromeDriver.close();
-//        chromeDriver.quit();
+        chromeDriver.close();
+        chromeDriver.quit();
     }
 }
