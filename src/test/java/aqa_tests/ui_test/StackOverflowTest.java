@@ -2,10 +2,6 @@ package aqa_tests.ui_test;
 
 import day_11.StackOverflowTestBO;
 import day_12.BrowserFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
