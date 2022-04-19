@@ -1,6 +1,9 @@
 package day_11;
 
 import day_12.BrowserFactory;
+import day_12.decorators.CustomFieldDecorator;
+import day_12.decorators.WebButton;
+import day_12.decorators.WebInput;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -16,14 +19,14 @@ public class InstagramAuthPagePO {
     private WebDriver chromeDriver = BrowserFactory.getChromeDriver();
 
     @FindBy(xpath = "//*[@id=\"loginForm\"]/div/div[1]/div/label/input")
-    private WebElement loginInput;
+    private WebInput loginInput;
     @FindBy(xpath = "//*[@id=\"loginForm\"]/div/div[2]/div/label/input")
-    private WebElement passwordInput;
+    private WebInput passwordInput;
     @FindBy(xpath = "//*[@id=\"loginForm\"]/div/div[3]/button")
-    private WebElement loginButton;
+    private WebButton loginButton;
 
     public InstagramAuthPagePO() {
-        PageFactory.initElements(BrowserFactory.getChromeDriver(), this);
+        PageFactory.initElements(new CustomFieldDecorator(BrowserFactory.getChromeDriver()), this);
     }
 
     public void goToLoginPage() {
@@ -37,8 +40,8 @@ public class InstagramAuthPagePO {
         catch (TimeoutException e) {
             e.printStackTrace();
         }
-        loginInput.sendKeys(login);
-        passwordInput.sendKeys(password);
-        loginButton.click();
+        loginInput.fillWith(login);
+        passwordInput.fillWith(password);
+        loginButton.press();
     }
 }
