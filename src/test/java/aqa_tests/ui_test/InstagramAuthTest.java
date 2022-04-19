@@ -1,13 +1,15 @@
 package aqa_tests.ui_test;
 
 
+import com.automation.remarks.testng.UniversalVideoListener;
+import com.automation.remarks.video.annotations.Video;
 import day_11.InstagramAuthTestBO;
 import day_12.BrowserFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import day_13.listeners.CustomSuiteListener;
+import day_13.listeners.CustomTestListener;
+import org.testng.annotations.*;
 
+@Listeners({CustomSuiteListener.class, CustomTestListener.class})
 public class InstagramAuthTest {
 
     @BeforeTest

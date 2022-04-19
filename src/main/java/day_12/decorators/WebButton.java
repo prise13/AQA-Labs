@@ -9,7 +9,7 @@ public class WebButton extends Element {
     }
 
     public void press() {
-        System.out.println("Button " + webElement.getText() + " pressed");
+        System.out.println("Button " + "'" + webElement.getText() + "'" + " pressed");
         webElement.click();
     }
 

@@ -13,7 +13,8 @@ public class BrowserFactory {
         return INSTANCE.get();
     }
     public static void initChromeBrowser() {
-        System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver.exe");
+        // System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver.exe");
+        ChromeDriverManager.getInstance().setup();
         INSTANCE.set(new ChromeDriver());
     }
 }

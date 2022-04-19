@@ -11,7 +11,7 @@ public class WebInput extends Element{
 
     // Custom method to fill input with logging
     public void fillWith(String value) {
-        System.out.println("Sent value to input: " + webElement.getAccessibleName() + ", value: " + value);
+        System.out.println("Sent value to input: " + "'" + webElement.getAccessibleName() + "'" + ", value: " + value);
         webElement.sendKeys(value);
     }
 
