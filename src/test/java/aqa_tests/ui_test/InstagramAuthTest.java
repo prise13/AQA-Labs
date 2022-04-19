@@ -20,6 +20,7 @@ public class InstagramAuthTest {
         return new Object[][] {
                 {"User1123", "Hapipo"},
                 {"User2123", "Hapupo"},
+                {"123","123"},
                 {"aqatest12", "AQAAuthenticationTest"}
         };
     }
@@ -30,7 +31,7 @@ public class InstagramAuthTest {
         instagramAuthTestBO
                 .openLoginPage()
                 .login(login, password)
-                .verifyLogin(); 
+                .verifyLogin();
     }
 
     @AfterTest

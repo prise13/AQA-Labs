@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -42,6 +43,11 @@ public class InstagramAuthPagePO {
         }
         loginInput.fillWith(login);
         passwordInput.fillWith(password);
-        loginButton.press();
+        if (loginButton.isActive()) {
+            loginButton.press();
+        }
+        else {
+            Assert.fail("Incorrect input data");
+        }
     }
 }

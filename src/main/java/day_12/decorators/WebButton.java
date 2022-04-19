@@ -12,4 +12,8 @@ public class WebButton extends Element {
         System.out.println("Button " + webElement.getText() + " pressed");
         webElement.click();
     }
+
+    public boolean isActive() {
+        return webElement.isEnabled();
+    }
 }
