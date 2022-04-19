@@ -9,7 +9,7 @@ import day_13.listeners.CustomSuiteListener;
 import day_13.listeners.CustomTestListener;
 import org.testng.annotations.*;
 
-@Listeners({CustomSuiteListener.class, CustomTestListener.class})
+@Listeners({UniversalVideoListener.class, CustomSuiteListener.class, CustomTestListener.class})
 public class InstagramAuthTest {
 
     @BeforeTest
@@ -28,6 +28,7 @@ public class InstagramAuthTest {
     }
 
     @Test(dataProvider = "instagramAuthProvider")
+    @Video(name="Instagram_auth")
     void instagramAuthTest(String login, String password) {
         InstagramAuthTestBO instagramAuthTestBO = new InstagramAuthTestBO();
         instagramAuthTestBO
