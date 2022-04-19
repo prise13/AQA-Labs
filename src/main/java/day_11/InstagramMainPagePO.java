@@ -2,6 +2,7 @@ package day_11;
 
 import day_12.BrowserFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,7 +26,12 @@ public class InstagramMainPagePO {
 
     public void verifyLogin() {
         WebDriverWait wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(5));
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/section/nav")));
-        Assert.assertTrue(header.isDisplayed());
+        try {
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/section/nav")));
+        }
+        catch (TimeoutException e) {
+            Assert.fail("Login failed");
+        }
+        Assert.assertTrue(header.isDisplayed(), "Login failed");
     }
 }

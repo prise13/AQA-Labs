@@ -30,7 +30,7 @@ public class InstagramAuthTest {
         instagramAuthTestBO
                 .openLoginPage()
                 .login(login, password)
-                .verifyLogin();
+                .verifyLogin(); 
     }
 
     @AfterTest

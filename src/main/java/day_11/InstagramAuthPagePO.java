@@ -2,10 +2,15 @@ package day_11;
 
 import day_12.BrowserFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class InstagramAuthPagePO {
     private WebDriver chromeDriver = BrowserFactory.getChromeDriver();
@@ -25,6 +30,13 @@ public class InstagramAuthPagePO {
         chromeDriver.get("https://www.instagram.com/");
     }
     public void login(String login, String password) {
+        WebDriverWait wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(5));
+        try {
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"loginForm\"]/div/div[3]/button")));
+        }
+        catch (TimeoutException e) {
+            e.printStackTrace();
+        }
         loginInput.sendKeys(login);
         passwordInput.sendKeys(password);
         loginButton.click();
