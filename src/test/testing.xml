@@ -5,12 +5,9 @@
     <parameter name="first-value" value="10"/>
     <parameter name="second-value" value="2"/>
     <parameter name="expected-result" value="5"/>
-    <test name="CalculatorTest" >
+    <test name="Instagram Auth Test" >
         <classes>
-            <class name="aqa_tests.AddClassTest" />
-            <class name="aqa_tests.DivisionCalcTest" />
-            <class name="aqa_tests.MinusCalcTest" />
-            <class name="aqa_tests.MultipleClassTest" />
+            <class name="aqa_tests.ui_test.InstagramAuthTest" />
         </classes>
     </test>
 </suite>

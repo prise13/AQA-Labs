@@ -7,9 +7,15 @@ import day_11.InstagramAuthTestBO;
 import day_12.BrowserFactory;
 import day_13.listeners.CustomSuiteListener;
 import day_13.listeners.CustomTestListener;
+import day_14.AllureListener;
 import org.testng.annotations.*;
 
-@Listeners({UniversalVideoListener.class, CustomSuiteListener.class, CustomTestListener.class})
+@Listeners({
+        UniversalVideoListener.class,
+        CustomSuiteListener.class,
+        CustomTestListener.class,
+        AllureListener.class
+})
 public class InstagramAuthTest {
 
     @BeforeTest

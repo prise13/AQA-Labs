@@ -4,6 +4,7 @@ import day_12.BrowserFactory;
 import day_12.decorators.CustomFieldDecorator;
 import day_12.decorators.WebButton;
 import day_12.decorators.WebInput;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +34,7 @@ public class InstagramAuthPagePO {
     public void goToLoginPage() {
         chromeDriver.get("https://www.instagram.com/");
     }
+
     public void login(String login, String password) {
         WebDriverWait wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(5));
         try {

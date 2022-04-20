@@ -1,6 +1,7 @@
 package day_11;
 
 import day_12.BrowserFactory;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -25,7 +26,7 @@ public class InstagramMainPagePO {
     }
 
     public void verifyLogin() {
-        WebDriverWait wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(2));
         try {
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/section/nav")));
         }
