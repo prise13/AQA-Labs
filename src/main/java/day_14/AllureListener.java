@@ -1,11 +1,14 @@
 package day_14;
 
 import day_12.BrowserFactory;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import java.io.ByteArrayInputStream;
 
 public class AllureListener implements ITestListener {
 
@@ -13,11 +16,14 @@ public class AllureListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         ITestListener.super.onTestFailure(result);
         takeScreenshot();
+        getSourceTree();
     }
 
-    @Attachment(value = "Page screenshot", type = "image/png")
-    private byte[] takeScreenshot() {
-        System.out.println("Taking screenshot");
-            return ((TakesScreenshot) BrowserFactory.getChromeDriver()).getScreenshotAs(OutputType.BYTES);
+    private void takeScreenshot() {
+        Allure.addAttachment("Page screenshot", new ByteArrayInputStream(((TakesScreenshot) BrowserFactory.getChromeDriver()).getScreenshotAs(OutputType.BYTES)));
+    }
+
+    private void getSourceTree() {
+        Allure.addAttachment("DOM Tree", BrowserFactory.getChromeDriver().getPageSource());
     }
 }
