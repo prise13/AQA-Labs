@@ -10,8 +10,8 @@ import java.util.UUID;
 import static io.restassured.RestAssured.given;
 
 public class TrelloCRUDTest {
-    private final String API_KEY = "5f48e7f3a95e47829652a5faeccb0c6e";
-    private final String API_TOKEN = "98ac009d3cb51670c6fd84fbfda5fed6ac342ddfe33b54a7043e0335787e355c";
+    private final String API_KEY = "classified";
+    private final String API_TOKEN = "classified";
     private String boardName;
     private final String ORGANIZATION_ID = "6262eef88834e05ca232a516";
     private String boardID;
