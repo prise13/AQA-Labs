@@ -4,7 +4,6 @@ import day_12.BrowserFactory;
 import day_12.decorators.CustomFieldDecorator;
 import day_12.decorators.WebButton;
 import day_12.decorators.WebInput;
-import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +29,7 @@ public class InstagramAuthPagePO {
     public InstagramAuthPagePO() {
         PageFactory.initElements(new CustomFieldDecorator(BrowserFactory.getChromeDriver()), this);
     }
-
+    
     public void goToLoginPage() {
         chromeDriver.get("https://www.instagram.com/");
     }
