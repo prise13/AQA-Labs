@@ -81,8 +81,7 @@ public class TrelloCustomCRUDTest {
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         ObjectMapper objectMapper = new ObjectMapper();
-        CreateBoardResponse createBoardResponse =
-                null;
+        CreateBoardResponse createBoardResponse = null;
         try {
             createBoardResponse = objectMapper.readValue(response.body(), CreateBoardResponse.class);
         } catch (IOException e) {
